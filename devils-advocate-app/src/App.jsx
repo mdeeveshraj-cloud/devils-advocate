@@ -99,6 +99,13 @@ function Gauge({ value }) {
 
 export default function App() {
   const [phase, setPhase] = useState("intake");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+useEffect(() => {
+  const handleResize = () => setIsMobile(window.innerWidth < 768);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   const [ideaText, setIdeaText] = useState("");
   const [rebuttal, setRebuttal] = useState("");
   const [transcript, setTranscript] = useState([]);
@@ -286,17 +293,11 @@ export default function App() {
 
   return (
     <div style={{ ...rootStyle }}>
-      <div style={{ display: "flex", flex: 1, minHeight: "100vh" }}>
+      <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", flex: 1, minHeight: "100vh" }}>
         <div
           style={{
-            width: 180,
-            flexShrink: 0,
-            background: "#100E0A",
-            borderRight: "1px solid #3A3324",
-            padding: "24px 16px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 28,
+           width: isMobile ? "100%" : 180,
+    flexShrink: 0, 
           }}
         >
           <div>
