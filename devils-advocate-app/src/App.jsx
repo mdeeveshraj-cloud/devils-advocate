@@ -351,7 +351,7 @@ export default function App() {
           >
             {(transcript || []).slice(-2).map((entry, i) => (
               <div
-                key={i}
+                key={entry.id || entry.text || i}
                 style={{
                   alignSelf: entry.side === "user" ? "flex-end" : "flex-start",
                   maxWidth: "78%",
@@ -382,7 +382,7 @@ export default function App() {
                     lineHeight: 1.6,
                   }}
                 >
-                  {entry.text}
+                  {entry?.text || entry?.objection || entry?.content || ""}
                 </div>
               </div>
             ))}
