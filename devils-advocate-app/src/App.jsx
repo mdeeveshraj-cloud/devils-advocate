@@ -349,7 +349,7 @@ export default function App() {
               gap: 18,
             }}
           >
-            {(transcript || []).slice(-2).map((entry, i) => (
+           {transcript.map((entry, i) => (
               <div
                 key={entry.id || entry.text || i}
                 style={{
