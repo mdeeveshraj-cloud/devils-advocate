@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+const chatEndRef = useRef(null);
 
+useEffect(() => {
+  chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+});
 const MAX_ROUNDS = 10;
 
 function StampOverlay({ verdict }) {
@@ -480,6 +484,7 @@ export default function App() {
                 }}
               >
                 OPEN NEW CASE
+                <div ref={chatEndRef} />
               </button>
             </div>
           )}
