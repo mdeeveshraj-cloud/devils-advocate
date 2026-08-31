@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  #root > div {
+    flex-direction: column !important;
+  }
+  #root > div > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #root > div > div:last-child {
+    width: 100% !important;
+  }
+  body, html, #root {
+    overflow-x: hidden !important;
+  }
+}
