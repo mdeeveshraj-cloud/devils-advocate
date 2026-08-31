@@ -355,7 +355,7 @@ export default function App() {
                 key={entry.id || entry.text || i}
                 style={{
                   alignSelf: entry.side === "user" ? "flex-end" : "flex-start",
-                  maxWidth: "78%",
+                  maxWidth: "90%",
                 }}
               >
                 <div
