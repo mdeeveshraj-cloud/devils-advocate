@@ -109,6 +109,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const scrollRef = useRef(null);
+  const chatEndRef = useRef(null);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -479,7 +480,6 @@ export default function App() {
                 }}
               >
                 OPEN NEW CASE
-                <div ref={chatEndRef} />
               </button>
             </div>
           )}
