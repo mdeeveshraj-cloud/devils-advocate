@@ -348,13 +348,13 @@ export default function App() {
             style={{
               flex: 1,
               overflowY: "auto",
-              padding: "28px 32px",
+              padding: "16px 12px",
               display: "flex",
               flexDirection: "column",
               gap: 18,
             }}
           >
-            {transcript.map((entry, i) => (
+            {transcript.slice(-2).map((entry, i) => (
               <div
                 key={i}
                 style={{
